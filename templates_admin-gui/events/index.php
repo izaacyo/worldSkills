@@ -2,7 +2,15 @@
 session_start();
 
 if (!isset($_SESSION['organizers_id']) && !isset($_SESSION['organizers_email'])) { 
+
+    include '../db_conn.php';
+
+
+    $eventsName = $conn->prepare("SELECT * FROM events WHERE name=?");
+     //$eventsName->execute([$name]);
+   // echo $eventsName
 ?>
+
 
 <!doctype html>
 <html lang="en">
